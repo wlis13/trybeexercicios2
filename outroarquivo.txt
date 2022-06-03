@@ -1,1 +1,5 @@
-estou tentando entender tudo isso , é muito legal.
+var nome = 'tovot';
+var epalindromo = nome.split('').reverse().join('');
+if(nome == epalindromo){
+console.log('A palavra é palíndromo!')
+}else{console.log('A palavra não é palíndromo!')};
