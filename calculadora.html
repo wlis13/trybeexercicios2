@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <style>
+#stilo{
+background: brown;
+font-size: 25px;
+border-radius: 20px;
+width: 400px;
+
+
+}
+#titulo{
+    background: orange;
+    font-size: 40px;
+border-radius: 20px;
+width: 400px;
+text-align: center;
+
+}
+body{
+    background: rgb(219, 29, 29)
+}
+.botao{
+font-size: 40px;
+width: 90px;
+height: 60px;
+background: yellow;
+text-align: center;
+align-items: center;
+
+}
+.imc{
+    font-size: 40px;
+    width: 90px;
+    height: 60px;
+    background: yellow;
+}
+#resultado{
+background: yellow;
+font-size: 40px;
+border-radius: 20px;
+height: 60px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="titulo">
+        <p>exercicío</p>
+    </div>
+<div id="stilo"> 
+<h1>calculadora</h1>
+<p id ="resultado"></p>
+<table>
+<tr>
+<td><button class = "botao" onclick = "clean('c')">C</button></td>
+<td><button class="botao" onclick="back()"><</button></td>
+<td><button class="botao" onclick="insert('**')">^</button></td>
+<td><button class="botao" onclick="insert(Math.PI)">PI</button></td>
+</tr>
+<td><button class="botao" onclick="insert('7')">7</button></td>
+<td><button class="botao" onclick="insert('8')">8</button></td>
+<td><button class="botao" onclick="insert('9')">9</button></td>
+<td><button class="botao" onclick="insert('+')">+</button></td>
+<tr>
+<tr>
+<td><button class="botao" onclick="insert('4')">4</button></td>
+<td><button class="botao" onclick="insert('5')">5</button></td>
+<td><button class="botao" onclick="insert('6')">6</button></td>
+<td><button class="botao" onclick="insert('-')">-</button></td>
+</tr>
+<td><button class="botao" onclick="insert('1')">1</button></td>
+<td><button class="botao" onclick="insert('2')">2</button></td>
+<td><button class="botao" onclick="insert('3')">3</button></td>
+<td><button class="botao" onclick="insert('*')">x</button></td>
+</tr>
+<tr>
+<td><button class="botao" onclick="insert('.')">.</button></td>
+<td><button class="botao" onclick="insert('0')">0</button></td>
+<td><button class="botao" onclick="operacao()">=</button></td>
+<td><button class="imc" onclick="imc()">imc</button></td>
+</tr>
+
+</table>
+</div>
+
+<script>
+function clean(){
+    document.getElementById('resultado').innerHTML = '';
+}
+function back(){
+    var apagar = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = apagar.substring(0, apagar.length -1)
+}
+function insert(num){
+    var numero = document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = numero + num;
+
+
+}
+function operacao(){
+    var resultado = document.getElementById('resultado').innerHTML;
+    if(resultado){
+        document.getElementById('resultado').innerHTML = eval(resultado)
+    }else{
+        document.getElementById('resultado').innerHTML = 'limpo!'
+    }
+}
+function imc(){
+    var altura = parseFloat(prompt('digite a sua altura:'))
+var peso = parseFloat(prompt('digite o seu peso:'));
+var imc = peso / altura ** 2
+document.getElementById('resultado').innerHTML = 'Seu IMC é de: ' + imc.toFixed(2)
+
+}
+
+</script>
+
+
+
+
+
+    
+</body>
+</html>
