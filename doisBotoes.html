@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste botões</title>
+    <style>
+#final{
+font-size: 40px;
+color: orange;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+   
+<h1 id="styletitle">teste de funcionalidades</h1>
+
+<div id="stilobotao">
+<p id="final"></p>
+<p id="comeso"></p>
+<table>
+<tr>
+<td><button id="botao" onclick="primos()">primos</button></td>
+
+
+
+</tr>
+
+
+
+
+</table>
+</div>
+<script>
+function primos(){
+var divisor = 0;    
+var numero = parseInt(prompt('digite um número:'));
+for(var contador = 0; contador <= numero; contador ++){
+if(numero % contador == 0){
+    divisor++
+}
+}
+if(divisor == 2){
+   document.getElementById('comeso').innerHTML = 'Esse número é primo!'
+}else{document.getElementById('final').innerHTML = 'Esse número não é primo!'}
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
